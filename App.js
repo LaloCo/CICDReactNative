@@ -8,6 +8,7 @@
 
 import React from 'react';
 import Crashes from 'appcenter-crashes';
+import Analytics from 'appcenter-analytics';
 import {
   Button,
   StyleSheet,
@@ -17,10 +18,24 @@ import {
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 export default class App extends React.Component {
+  constructor() {
+    super();
+
+    this.checkPreviousSession();
+  }
+
+  async checkPreviousSession () {
+    const didCrash = await Crashes.hasCrashedInLastSession();
+    if(didCrash) {
+      const report = await Crashes.lastSessionCrashReport();
+      alert("Sorry about that crash, we're working on a solution");
+    }
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Button title="Crash"
+        <Button title="Calculate inflation"
                 onPress={() => Crashes.generateTestCrash()} />
       </View>
     );
