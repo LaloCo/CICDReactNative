@@ -1,6 +1,6 @@
 # CICDReactNative
 The React Native project for the LPA's CI/CD React Native course
 
-iOS: [![Build status](https://build.appcenter.ms/v0.1/apps/9c99379e-126b-495c-8b7b-3e5479b78fbf/branches/dev/badge)](https://appcenter.ms)
+iOS: [![Build status](https://build.appcenter.ms/v0.1/apps/559faff7-03aa-4c6d-af83-92218da25f23/branches/dev/badge)](https://appcenter.ms)
 
-Android: [![Build status](https://build.appcenter.ms/v0.1/apps/0c10a4d5-be7c-4609-8a5d-eb52234f017c/branches/dev/badge)](https://appcenter.ms)
+Android: [![Build status](https://build.appcenter.ms/v0.1/apps/f2f54287-90cd-4e0c-ba4e-855aac7e4688/branches/dev/badge)](https://appcenter.ms)
