@@ -72,10 +72,10 @@ export default class App extends React.Component {
         <TextInput placeholder="Current risk free rate"
                    style={styles.textBox} keyboardType='decimal-pad'
                    onChangeText={(riskFreeRate) => this.setState({riskFreeRate})}/>
-        <TextInput placeholder="Amount you want to save"
+        <TextInput placeholder="Amount you are saving"
                    style={styles.textBox} keyboardType='decimal-pad'
                    onChangeText={(amount) => this.setState({amount})}/>
-        <TextInput placeholder="For how long (in years) will you save?"
+        <TextInput placeholder="For how long (in years) will you save it?"
                    style={styles.textBox} keyboardType='decimal-pad'
                    onChangeText={(timeInYears) => this.setState({timeInYears})}/>
         <Button title="Calculate inflation"
@@ -83,7 +83,7 @@ export default class App extends React.Component {
                   this.calculate();
                   Analytics.trackEvent('calculate_inflation', { Internet: 'WiFi', GPS: 'Off' });
                 }} />
-        <Text style={styles.label}>{this.state.timeInYears} years from now you will still have ${this.state.amount} but it will only be worth ${this.state.afterInflation}.</Text>
+        <Text style={styles.label}>{this.state.timeInYears} years from now you will still have ${this.state.amount}, but it will only be worth ${this.state.afterInflation}.</Text>
         <Text style={styles.label}>But if you invest it at a risk free rate you will have ${this.state.atRiskFree}.</Text>
         <Text style={styles.label}>Which will be worth ${this.state.atRiskFreeAfterInflation} after inflation.</Text>
         <Text style={styles.label}>A difference of: ${this.state.difference}.</Text>
@@ -101,10 +101,10 @@ const styles = StyleSheet.create({
     marginTop: 10
   },
   textBox: {
-    height: 30,
+    height: 40,
     borderColor: 'gray',
     borderWidth: 1,
-    marginTop: 10
+    marginBottom: 10
   },
   scrollView: {
     backgroundColor: Colors.lighter,
