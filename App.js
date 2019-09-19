@@ -78,7 +78,7 @@ export default class App extends React.Component {
         <TextInput placeholder="For how long (in years) will you save it?"
                    style={styles.textBox} keyboardType='decimal-pad'
                    onChangeText={(timeInYears) => this.setState({timeInYears})}/>
-        <Button title="Calculate inflation"
+        <Button title="Calculate real value"
                 onPress={() => {
                   this.calculate();
                   Analytics.trackEvent('calculate_inflation', { Internet: 'WiFi', GPS: 'Off' });
