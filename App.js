@@ -83,10 +83,10 @@ export default class App extends React.Component {
                   this.calculate();
                   Analytics.trackEvent('calculate_inflation', { Internet: 'WiFi', GPS: 'Off' });
                 }} />
-        <Text style={styles.label}>{this.state.timeInYears} years from now you will still have ${this.state.amount}, but it will only be worth ${this.state.afterInflation}.</Text>
-        <Text style={styles.label}>But if you invest it at a risk free rate you will have ${this.state.atRiskFree}.</Text>
-        <Text style={styles.label}>Which will be worth ${this.state.atRiskFreeAfterInflation} after inflation.</Text>
-        <Text style={styles.label}>A difference of: ${this.state.difference}.</Text>
+        <Text style={styles.label}>{this.state.timeInYears} years from now you will still have ${parseFloat(this.state.amount).toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}, but it will only be worth ${parseFloat(this.state.afterInflation).toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}.</Text>
+        <Text style={styles.label}>But if you invest it at a risk free rate you will have ${parseFloat(this.state.atRiskFree).toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}.</Text>
+        <Text style={styles.label}>Which will be worth ${parseFloat(this.state.atRiskFreeAfterInflation).toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')} after inflation.</Text>
+        <Text style={styles.label}>A difference of: ${parseFloat(this.state.difference).toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}.</Text>
       </View>
     );
   }
