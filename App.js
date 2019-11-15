@@ -108,10 +108,12 @@ const styles = StyleSheet.create({
     color: 'gray'
   },
   textBox: {
-    height: 30,
+    height: 40,
+    paddingLeft: 6,
     borderColor: 'gray',
     borderWidth: 1,
-    marginBottom: 10
+    marginBottom: 10,
+    borderRadius: 5
   },
   scrollView: {
     backgroundColor: Colors.lighter,
