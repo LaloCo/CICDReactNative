@@ -66,16 +66,17 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <TextInput placeholder="Current inflation rate"
+        <TextInput placeholder="Current inflation rate in your country"
                    style={styles.textBox} keyboardType='decimal-pad'
                    onChangeText={(inflationRate) => this.setState({inflationRate})}/>
         <TextInput placeholder="Current risk free rate"
                    style={styles.textBox} keyboardType='decimal-pad'
                    onChangeText={(riskFreeRate) => this.setState({riskFreeRate})}/>
-        <TextInput placeholder="Amount you are saving"
+        <Text style={styles.smallLabel}>The risk free rate is the one offered by your country's central bank.</Text>           
+        <TextInput placeholder="Amount you are saving today"
                    style={styles.textBox} keyboardType='decimal-pad'
                    onChangeText={(amount) => this.setState({amount})}/>
-        <TextInput placeholder="For how long (in years) will you save it?"
+        <TextInput placeholder="For how long (in years) will you save that?"
                    style={styles.textBox} keyboardType='decimal-pad'
                    onChangeText={(timeInYears) => this.setState({timeInYears})}/>
         <Button title="Calculate real value"
@@ -86,7 +87,7 @@ export default class App extends React.Component {
         <Text style={styles.label}>{this.state.timeInYears} years from now you will still have ${parseFloat(this.state.amount).toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}, but it will only be worth ${parseFloat(this.state.afterInflation).toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}.</Text>
         <Text style={styles.label}>But if you invest it at a risk free rate you will have ${parseFloat(this.state.atRiskFree).toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}.</Text>
         <Text style={styles.label}>Which will be worth ${parseFloat(this.state.atRiskFreeAfterInflation).toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')} after inflation.</Text>
-        <Text style={styles.label}>A difference of: ${parseFloat(this.state.difference).toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}.</Text>
+        
       </View>
     );
   }
@@ -100,11 +101,19 @@ const styles = StyleSheet.create({
   label: {
     marginTop: 10
   },
+  smallLabel: {
+    marginTop: -8,
+    marginBottom: 10,
+    fontSize: 12,
+    color: 'gray'
+  },
   textBox: {
     height: 40,
+    paddingLeft: 6,
     borderColor: 'gray',
     borderWidth: 1,
-    marginBottom: 10
+    marginBottom: 10,
+    borderRadius: 5
   },
   scrollView: {
     backgroundColor: Colors.lighter,
