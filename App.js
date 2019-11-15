@@ -66,16 +66,16 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <TextInput placeholder="Current inflation rate"
+        <TextInput placeholder="Current inflation rate in your country..."
                    style={styles.textBox} keyboardType='decimal-pad'
                    onChangeText={(inflationRate) => this.setState({inflationRate})}/>
-        <TextInput placeholder="Current risk free rate"
+        <TextInput placeholder="Current risk free rate (gobernment debt)"
                    style={styles.textBox} keyboardType='decimal-pad'
                    onChangeText={(riskFreeRate) => this.setState({riskFreeRate})}/>
-        <TextInput placeholder="Amount you are saving"
+        <TextInput placeholder="Amount you are saving (not recurrent)"
                    style={styles.textBox} keyboardType='decimal-pad'
                    onChangeText={(amount) => this.setState({amount})}/>
-        <TextInput placeholder="For how long (in years) will you save it?"
+        <TextInput placeholder="For how long (in years) will you save that?"
                    style={styles.textBox} keyboardType='decimal-pad'
                    onChangeText={(timeInYears) => this.setState({timeInYears})}/>
         <Button title="Calculate real value"
