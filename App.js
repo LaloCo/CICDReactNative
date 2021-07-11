@@ -76,7 +76,7 @@ export default class App extends React.Component {
         <TextInput placeholder="Amount you are saving today"
                    style={styles.textBox} keyboardType='decimal-pad'
                    onChangeText={(amount) => this.setState({amount})}/>
-        <TextInput placeholder="For how long (in years) will you save that?"
+        <TextInput placeholder="For how long (in years) will you save that amount?"
                    style={styles.textBox} keyboardType='decimal-pad'
                    onChangeText={(timeInYears) => this.setState({timeInYears})}/>
         <Button title="Calculate real value"
